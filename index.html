@@ -1,15 +1,81 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0" />
     <title>Document</title>
-</head>
-<body>
-    <h1>My project</h1>
-    <p>
-        test if domain is working
-    </p>
-</body>
+    <link rel="stylesheet" href="css/header.css" />
+    <style>
+
+      #intro {
+        width: 97%;
+        height: 200px;
+        position: relative;
+        text-align: center;
+        margin: auto;
+      }
+
+      .introtext {
+        position: absolute;
+        top: 60px;
+        left: 80px;
+        text-align: left;
+        font-size: 14pt;
+        font-family: Arial, Helvetica, sans-serif;
+        line-height: 35px;
+      }
+
+      .introtext h2 {
+        margin-right: 900px;
+      }
+
+      .introtext p {
+        margin-right: 900px;
+        margin-top: 50px;
+      }
+
+      #background {
+        width: 100%;
+        height: 700px;
+        object-fit: cover;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="header">
+      <h1>Chinese Product Review</h1>
+      <div id="navigation">
+        <ul id="nav">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="content1.html">Product 1</a></li>
+          <li><a href="content2.html">Product 2</a></li>
+          <li><a href="content3.html">Product 3</a></li>
+          <li><a href="content4.html">Product 4</a></li>
+          <li><a href="content5.html">Product 5</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="sitemap.html">Sitemap</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div id="intro">
+      <img
+        id="background"
+        src="images/china.jpg"
+        alt="background"
+        title="background"
+      />
+      <div class="introtext">
+        <h2>Traditional Chinese Culture X Modern Product Disign</h2>
+        <p>
+          Welcome to my website!My website is about products with creative
+          designs and traditional Chinese culture elements. I will demonstrate
+          some of the products I like on the website and then explain the
+          cultural implications behind the product designs.
+        </p>
+      </div>
+    </div>
+    <p></p>
+  </body>
 </html>
