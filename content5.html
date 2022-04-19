@@ -15,95 +15,40 @@
     />
     <mate name="author" content="Xuyang Jiang from Babson College" />
     <title>Document</title>
-    <link rel="stylesheet" href="css/header.css" />
+    <link rel="stylesheet" href="css/header+content.css" />
     <link rel="icon" href="images/favicon.ico" type="image/x-icon" />
     <style>
-      /* #title {
-        text-align: left;
+      #videointro {
+        font-size: 20px;
+        text-align: center;
+        font-style: italic;
+        width: 57%;
         margin-top: 50px;
+        margin-bottom: 20px;
         margin-left: 12%;
         margin-right: 31%;
-        margin-bottom: -200px;
-      }
-
-      #title h2 {
-        font-size: 40px;
-        color: rgb(146, 118, 18);
-        border-bottom: 1px solid rgba(49, 44, 25, 0.767);
-      }
-
-      #title h3 {
-        font-family: "Times New Roman", Times, serif;
-        font-size: 20px;
         color: rgba(146, 118, 18, 0.651);
-        line-height: 10px;
       }
 
-      #title a {
-        text-decoration: none;
-        color: rgb(110, 109, 109);
-      }
-
-      .pic {
+      #video {
         width: 57%;
         margin-left: 12%;
         margin-right: 31%;
-      }
-
-      img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-      }
-
-      #contents {
-        text-align: right;
-        font-size: 10px;
-        margin-right: 8%;
-        margin-left: 70%;
-        padding: 30px;
-        float: left;
-      }
-
-      #contents h4 {
-        font-size: 20px;
-        font-weight: 600;
-        font-family: "Times New Roman", Times, serif;
-      }
-
-      #contents a {
-        text-decoration: none;
-        color: black;
-      }
-
-      li {
-        font-size: 18px;
-        list-style: none;
-        padding: 20px;
-      }
-
-      ul {
-        border-top: 1px solid rgba(49, 44, 25, 0.767);
-        border-right: 1px solid rgba(49, 44, 25, 0.767);
-      }
-
-      .text {
-        width: 57%;
-        margin-top: 50px;
         margin-bottom: 50px;
-        margin-left: 12%;
-        margin-right: 31%;
       }
 
-      .text h4 {
-        font-size: 20px;
-        color: rgba(146, 118, 18, 0.651);
+      iframe {
+        margin-left: auto;
+        margin-right: auto;
+        display: block;
+        margin-bottom: 20px;
       }
 
-      .text p {
+      #video p {
         font-size: 18px;
         line-height: 30px;
-      } */
+        font-style: italic;
+      }
     </style>
   </head>
   <body>
@@ -124,40 +69,103 @@
     </div>
 
     <div id="title">
-      <h2></h2>
-      <h3></h3>
-      <a href></a>
+      <h2>"San Xing Dui" Poker</h2>
+      <h3>Created by the "The Nation's Greatest Treasure" TV program</h3>
+      <h3>
+        <i
+          >Available on
+          <a
+            href="https://detail.tmall.com/item.htm?spm=a1z10.5-b.w4011-21062092750.122.a8ae2411Zjo0yc&id=638294092416&rn=9143355799a8fc64f8646eeaa1d05bea&abbucket=2"
+            >Taobao</a
+          ></i
+        >
+      </h3>
     </div>
     <div id="contents">
-      <table>
-        <tr>
-          <td><a href="#desc">Product Description</a></td>
-        </tr>
-        <tr>
-          <td><a href="elem">Traditional Elements</a></td>
-        </tr>
-      </table>
+      <!-- this part will be floating as users scroll down-->
+      <h4>Contents</h4>
+      <ul>
+        <li><a href="#desc">Product Description</a></li>
+        <li><a href="#elem">Traditional Elements</a></li>
+      </ul>
     </div>
     <div class="pic">
-      <img src="" alt="" title="" />
+      <img
+        src="images/sanxingduiPoker.jpg"
+        alt="SanXingDuiPoker"
+        title="SanXingDuiPoker"
+      />
     </div>
     <div class="text" id="desc">
-      <h4></h4>
-      <p></p>
+      <h4>Product Description</h4>
+      <p>
+        This poker is designed and sold by the "The Nation's Greatest Treasure"
+        tv program. "The Nation's Greatest Treasure" (also know as "National
+        Treasure") is a 2017 Chinese cultural exploration variety TV program
+        that aired on CCTV-3 and CCTV-1 in China. They are also available on
+        <a href="https://www.youtube.com/watch?v=pFsS4DoMWKc">YouTube</a>. The
+        material of this poker is cardboard and it functions just like regular
+        pokers but with unique designs.
+      </p>
     </div>
     <div class="pic">
-      <img src="" alt="" title="" />
+      <img
+        src="images/sanxingduiPoker2.jpg"
+        alt="SanXingDuiPoker"
+        title="SanXingDuiPoker"
+      />
     </div>
     <div class="text" id="elem">
-      <h4></h4>
-      <p></p>
+      <h4>Traditional Elements</h4>
+      <p>
+        The patterns printed on the pokers are inspired by Sanxingdui (also
+        known as Three Star Mound), an archaeological site and a major Bronze
+        Age culture in modern Guanghan. The discovery at Sanxingdui, as well as
+        other discoveries such as the Xingan tombs in Jiangxi, challenges the
+        traditional narrative of Chinese civilization spreading from the Central
+        Plain along the Yellow River, and Chinese archaeologists have begun to
+        speak of "multiple centers of innovation jointly ancestral to Chinese
+        civilization."
+      </p>
+    </div>
+    <div id="videointro">
+      <p>Watch the video below to learn more!</p>
+    </div>
+    <div id="video">
+      <iframe
+        width="560"
+        height="315"
+        src="https://www.youtube.com/embed/TJknwAL8Dsw"
+        title="YouTube video player"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen
+      ></iframe>
+      <p>
+        <b>Description of the video: </b>
+        A massive dig unearthed over 500 sophisticated artefacts in the
+        Sanxingdui archaeological site in China’s southwestern province of
+        Sichuan. The dig, which started in 2019, found treasures that had no
+        apparent connection to known Chinese culture and were likely used for
+        religious or magical ceremonies. The amount of items discovered suggests
+        the existence of a prosperous, yet unknown civilisation that may have
+        been economically prosperous and technologically advanced.
+      </p>
     </div>
     <div class="pic">
-      <img src="" alt="" title="" />
+      <img
+        src="images/sanxingduiPoker3.jpg"
+        alt="SanXingDuiPoker"
+        title="SanXingDuiPoker"
+      />
     </div>
     <div class="text">
-      <h4></h4>
-      <p></p>
+      <p>
+        If you would like to learn more about this product, "The Nation's Greatest Treasure" tv program, and Sanxingdui,
+        you may watch this
+        <a href="https://www.youtube.com/watch?v=qqmz9Heds2I">video</a>
+        for more information.
+      </p>
     </div>
   </body>
 </html>
