@@ -4,101 +4,19 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="about products with creative designs and traditional Chinese
-    culture elements"/>
-    <meta name="keywords" content="Chinese Culture, Creative Products, Design"/>
-    <mate name="author" content="Xuyang Jiang from Babson College"/>
+    <meta
+      name="description"
+      content="about products with creative designs and traditional Chinese
+    culture elements"
+    />
+    <meta
+      name="keywords"
+      content="Chinese Culture, Creative Products, Design"
+    />
+    <mate name="author" content="Xuyang Jiang from Babson College" />
     <title>Document</title>
-    <link rel="stylesheet" href="css/header.css"/>
+    <link rel="stylesheet" href="css/header+content.css" />
     <link rel="icon" href="images/favicon.ico" type="image/x-icon" />
-    <style>
-      #title {
-        text-align: left;
-        margin-top: 50px;
-        margin-left: 12%;
-        margin-right: 31%;
-        margin-bottom: -200px;
-      }
-
-      #title h2 {
-        font-size: 40px;
-        color: rgb(146, 118, 18);
-        border-bottom: 1px solid rgba(49, 44, 25, 0.767);
-      }
-
-      #title h3 {
-        font-family: "Times New Roman", Times, serif;
-        font-size: 20px;
-        color: rgba(146, 118, 18, 0.651);
-        line-height: 10px;
-      }
-
-      #title a {
-        text-decoration: none;
-        color: rgb(110, 109, 109);
-      }
-
-      .pic {
-        width: 57%;
-        margin-left: 12%;
-        margin-right: 31%;
-      }
-
-      img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-      }
-
-      #contents {
-        text-align: right;
-        font-size: 10px;
-        margin-right: 8%;
-        margin-left: 70%;
-        padding: 30px;
-        float: left;
-      }
-
-      #contents h4 {
-        font-size: 20px;
-        font-weight: 600;
-        font-family: "Times New Roman", Times, serif;
-      }
-
-      #contents a {
-        text-decoration: none;
-        color: black;
-      }
-
-      li {
-        font-size: 18px;
-        list-style: none;
-        padding: 20px;
-      }
-
-      ul {
-        border-top: 1px solid rgba(49, 44, 25, 0.767);
-        border-right: 1px solid rgba(49, 44, 25, 0.767);
-      }
-
-      .text {
-        width: 57%;
-        margin-top: 50px;
-        margin-bottom: 50px;
-        margin-left: 12%;
-        margin-right: 31%;
-      }
-
-      .text h4 {
-        font-size: 20px;
-        color: rgba(146, 118, 18, 0.651);
-      }
-
-      .text p {
-        font-size: 18px;
-        line-height: 30px;
-      }
-    </style>
   </head>
   <body>
     <div id="header">
@@ -143,7 +61,7 @@
     </div>
     <div class="text" id="desc">
       <h4>Product Description</h4>
-      <p>
+      <p id="paraone">
         This bookmark is designed and sold by the Dunhuang Academy, a national
         research institute on Dunhuang art. This bookmark is about 45mm long and
         60mm wide. The material is gold plated stainless steel, and it has a
@@ -155,7 +73,7 @@
     </div>
     <div class="text" id="elem">
       <h4>Traditional Elements</h4>
-      <p>
+      <p id="paratwo">
         This is a picture of the painting inside the Cave 15 of the Yulin Caves.
         FeiTian is the Chinese word of Apsara, a flying deva of Hindu and
         Buddhist mythology. FeiTian are beautiful and supernatural female gods.
@@ -171,11 +89,61 @@
       <img src="images/feitian3.png" alt="FeiTian" title="FeiTian" />
     </div>
     <div class="text">
-      <p>
+      <p id="parathree">
         If you would like to learn more about this product and the story behind,
-        you may go to the <a href="https://www.dha.ac.cn/">Dunhuang Acamedy's official website</a> for more
-        information.
+        you may go to the
+        <a href="https://www.dha.ac.cn/">Dunhuang Acamedy's official website</a>
+        for more information.
       </p>
     </div>
+    <script>
+      // create function textbold() for all p elements so that when viewers mouseover to the paragraphs, the text will become bold
+
+      function textbold(paraId) {
+        let para = document.getElementById(paraId);
+        para.style.fontWeight = "bold";
+      }
+
+      document
+        .getElementById("paraone")
+        .addEventListener("mouseover", function () {
+          textbold("paraone");
+        });
+
+      document
+        .getElementById("paratwo")
+        .addEventListener("mouseover", function () {
+          textbold("paratwo");
+        });
+
+      document
+        .getElementById("parathree")
+        .addEventListener("mouseover", function () {
+          textbold("parathree");
+        });
+
+      function textback(paraId) {
+        let para = document.getElementById(paraId);
+        para.style.fontWeight = "normal";
+      }
+
+      document
+        .getElementById("paraone")
+        .addEventListener("mouseleave", function () {
+          textback("paraone");
+        });
+
+      document
+        .getElementById("paratwo")
+        .addEventListener("mouseleave", function () {
+          textback("paratwo");
+        });
+
+      document
+        .getElementById("parathree")
+        .addEventListener("mouseleave", function () {
+          textback("parathree");
+        });
+    </script>
   </body>
 </html>

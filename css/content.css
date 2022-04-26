@@ -1,0 +1,86 @@
+#title {
+    text-align: left;
+    margin-top: 50px;
+    margin-left: 12%;
+    margin-right: 31%;
+    margin-bottom: -200px;
+  }
+
+  #title h2 {
+    font-size: 40px;
+    color: rgb(146, 118, 18);
+    border-bottom: 1px solid rgba(49, 44, 25, 0.767);
+  }
+
+  #title h3 {
+    font-family: "Times New Roman", Times, serif;
+    font-size: 20px;
+    color: rgba(146, 118, 18, 0.651);
+    line-height: 10px;
+  }
+
+  #title a {
+    text-decoration: none;
+    color: rgb(110, 109, 109);
+  }
+
+  .pic {
+    width: 57%;
+    margin-left: 12%;
+    margin-right: 31%;
+  }
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  #contents {
+    text-align: right;
+    font-size: 10px;
+    margin-right: 8%;
+    margin-left: 70%;
+    padding: 30px;
+    float: left;
+  }
+
+  #contents h4 {
+    font-size: 20px;
+    font-weight: 600;
+    font-family: "Times New Roman", Times, serif;
+  }
+
+  #contents a {
+    text-decoration: none;
+    color: black;
+  }
+
+  li {
+    font-size: 18px;
+    list-style: none;
+    padding: 20px;
+  }
+
+  ul {
+    border-top: 1px solid rgba(49, 44, 25, 0.767);
+    border-right: 1px solid rgba(49, 44, 25, 0.767);
+  }
+
+  .text {
+    width: 57%;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    margin-left: 12%;
+    margin-right: 31%;
+  }
+
+  .text h4 {
+    font-size: 20px;
+    color: rgba(146, 118, 18, 0.651);
+  }
+
+  .text p {
+    font-size: 18px;
+    line-height: 30px;
+  }

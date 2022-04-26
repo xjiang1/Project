@@ -61,7 +61,7 @@
     </div>
     <div class="text" id="desc">
       <h4>Product Description</h4>
-      <p>
+      <p id="paraone">
         This bookmark is designed and sold by the Dunhuang Academy, a national
         research institute on Dunhuang art. This bookmark is about 45mm long and
         60mm wide. The material is gold plated stainless steel, and it has a
@@ -73,7 +73,7 @@
     </div>
     <div class="text" id="elem">
       <h4>Traditional Elements</h4>
-      <p>
+      <p id="paratwo">
         This is a picture of the painting inside the Cave 15 of the Yulin Caves.
         FeiTian is the Chinese word of Apsara, a flying deva of Hindu and
         Buddhist mythology. FeiTian are beautiful and supernatural female gods.
@@ -89,11 +89,60 @@
       <img src="images/jinsha2.jpg" alt="Jinsha" title="Jinsha" />
     </div>
     <div class="text">
-      <p>
+      <p id="parathree">
         If you would like to learn more about this product and the story behind,
         you may go to the <a href="https://www.dha.ac.cn/">Dunhuang Acamedy's official website</a> for more
         information.
       </p>
     </div>
+    <script>
+      // create function textbold() for all p elements so that when viewers mouseover to the paragraphs, the text will become bold
+
+      function textbold(paraId) {
+        let para = document.getElementById(paraId);
+        para.style.fontWeight = "bold";
+      }
+
+      document
+        .getElementById("paraone")
+        .addEventListener("mouseover", function () {
+          textbold("paraone");
+        });
+
+      document
+        .getElementById("paratwo")
+        .addEventListener("mouseover", function () {
+          textbold("paratwo");
+        });
+
+      document
+        .getElementById("parathree")
+        .addEventListener("mouseover", function () {
+          textbold("parathree");
+        });
+
+      function textback(paraId) {
+        let para = document.getElementById(paraId);
+        para.style.fontWeight = "normal";
+      }
+
+      document
+        .getElementById("paraone")
+        .addEventListener("mouseleave", function () {
+          textback("paraone");
+        });
+
+      document
+        .getElementById("paratwo")
+        .addEventListener("mouseleave", function () {
+          textback("paratwo");
+        });
+
+      document
+        .getElementById("parathree")
+        .addEventListener("mouseleave", function () {
+          textback("parathree");
+        });
+    </script>
   </body>
 </html>

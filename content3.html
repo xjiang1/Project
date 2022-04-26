@@ -15,7 +15,7 @@
     />
     <mate name="author" content="Xuyang Jiang from Babson College" />
     <title>Document</title>
-    <link rel="stylesheet" href="css/header+content.css"/>
+    <link rel="stylesheet" href="css/header+content.css" />
     <link rel="icon" href="images/favicon.ico" type="image/x-icon" />
     <style>
       #videointro {
@@ -98,7 +98,7 @@
     </div>
     <div class="text" id="desc">
       <h4>Product Description</h4>
-      <p>
+      <p id="paraone">
         This product is both a ruler and a bookmark. It is made of copper, and
         it is about 12.3cm wide and 4.8cm long. It can function as a normal
         ruler because it has measurements on it. It can also be used as a
@@ -119,7 +119,7 @@
     </div>
     <div class="text" id="elem">
       <h4>Traditional Elements</h4>
-      <p>
+      <p id="paratwo">
         The design of this ruler/bookmark originates from the famous painting
         Qian Li Jiang Shan Tu in the Palace Museum. This was pained by Wang
         Ximeng during the Northern Song Dynasty. This painting is a scroll of
@@ -145,7 +145,7 @@
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowfullscreen
       ></iframe>
-      <p>
+      <p id="parafour">
         <b>Description of the video: </b>This program will introduce an
         unprecedented landscape scroll“A Boundless View”, Chen Danqing lecture
         style, the painting can be said to be an accident in the history of
@@ -162,7 +162,7 @@
       />
     </div>
     <div class="text">
-      <p>
+      <p id="parathree">
         If you would like to learn more about this product and the story behind,
         you may go to the
         <a href="https://en.dpm.org.cn/"
@@ -171,5 +171,66 @@
         for more information.
       </p>
     </div>
+    <script>
+      // create function textbold() for all p elements so that when viewers mouseover to the paragraphs, the text will become bold
+
+      function textbold(paraId) {
+        let para = document.getElementById(paraId);
+        para.style.fontWeight = "bold";
+      }
+
+      document
+        .getElementById("paraone")
+        .addEventListener("mouseover", function () {
+          textbold("paraone");
+        });
+
+      document
+        .getElementById("paratwo")
+        .addEventListener("mouseover", function () {
+          textbold("paratwo");
+        });
+
+      document
+        .getElementById("parathree")
+        .addEventListener("mouseover", function () {
+          textbold("parathree");
+        });
+
+      document
+        .getElementById("parafour")
+        .addEventListener("mouseover", function () {
+          textbold("parafour");
+        });
+
+      function textback(paraId) {
+        let para = document.getElementById(paraId);
+        para.style.fontWeight = "normal";
+      }
+
+      document
+        .getElementById("paraone")
+        .addEventListener("mouseleave", function () {
+          textback("paraone");
+        });
+
+      document
+        .getElementById("paratwo")
+        .addEventListener("mouseleave", function () {
+          textback("paratwo");
+        });
+
+      document
+        .getElementById("parathree")
+        .addEventListener("mouseleave", function () {
+          textback("parathree");
+        });
+
+      document
+        .getElementById("parafour")
+        .addEventListener("mouseleave", function () {
+          textback("parafour");
+        });
+    </script>
   </body>
 </html>

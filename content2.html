@@ -55,7 +55,7 @@
     </div>
     <div class="text" id="desc">
       <h4>Product Description</h4>
-      <p>
+      <p id="paraone">
         This foldable night lamp looks like the shape of an open book. It is
         made of DuPont Tyvek paper and bamboo. Once open, it will create a warm
         light that will be good for night reading and sleeping. If you observe
@@ -68,7 +68,7 @@
     </div>
     <div class="text" id="elem">
       <h4>Traditional Elements</h4>
-      <p>
+      <p id="paratwo">
         The Chinese characters printed on the night lamp is the poem from the
         famous Xi Shan Yu Yi tu landscape painted by Huang Gong Wang in the Yuan
         Dynasty. This painting is now in the collection of the National Museum
@@ -82,7 +82,7 @@
       <img src="images/xishanyuyi2.jpg" alt="xishanyuyi" title="xishanyuyi" />
     </div>
     <div class="text">
-      <p>
+      <p id="parathree">
         If you would like to learn more about this product and the story behind,
         you may go to the
         <a href="http://en.chnmuseum.cn/"
@@ -91,5 +91,54 @@
         for more information.
       </p>
     </div>
+    <script>
+      // create function textbold() for all p elements so that when viewers mouseover to the paragraphs, the text will become bold
+
+      function textbold(paraId) {
+        let para = document.getElementById(paraId);
+        para.style.fontWeight = "bold";
+      }
+
+      document
+        .getElementById("paraone")
+        .addEventListener("mouseover", function () {
+          textbold("paraone");
+        });
+
+      document
+        .getElementById("paratwo")
+        .addEventListener("mouseover", function () {
+          textbold("paratwo");
+        });
+
+      document
+        .getElementById("parathree")
+        .addEventListener("mouseover", function () {
+          textbold("parathree");
+        });
+
+      function textback(paraId) {
+        let para = document.getElementById(paraId);
+        para.style.fontWeight = "normal";
+      }
+
+      document
+        .getElementById("paraone")
+        .addEventListener("mouseleave", function () {
+          textback("paraone");
+        });
+
+      document
+        .getElementById("paratwo")
+        .addEventListener("mouseleave", function () {
+          textback("paratwo");
+        });
+
+      document
+        .getElementById("parathree")
+        .addEventListener("mouseleave", function () {
+          textback("parathree");
+        });
+    </script>
   </body>
 </html>

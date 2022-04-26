@@ -98,7 +98,7 @@
     </div>
     <div class="text" id="desc">
       <h4>Product Description</h4>
-      <p>
+      <p id="paraone">
         This poker is designed and sold by the "The Nation's Greatest Treasure"
         tv program. "The Nation's Greatest Treasure" (also know as "National
         Treasure") is a 2017 Chinese cultural exploration variety TV program
@@ -117,7 +117,7 @@
     </div>
     <div class="text" id="elem">
       <h4>Traditional Elements</h4>
-      <p>
+      <p id="paratwo">
         The patterns printed on the pokers are inspired by Sanxingdui (also
         known as Three Star Mound), an archaeological site and a major Bronze
         Age culture in modern Guanghan. The discovery at Sanxingdui, as well as
@@ -141,7 +141,7 @@
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowfullscreen
       ></iframe>
-      <p>
+      <p id="parafour">
         <b>Description of the video: </b>
         A massive dig unearthed over 500 sophisticated artefacts in the
         Sanxingdui archaeological site in China’s southwestern province of
@@ -160,12 +160,73 @@
       />
     </div>
     <div class="text">
-      <p>
+      <p id="parathree">
         If you would like to learn more about this product, "The Nation's Greatest Treasure" tv program, and Sanxingdui,
         you may watch this
         <a href="https://www.youtube.com/watch?v=qqmz9Heds2I">video</a>
         for more information.
       </p>
     </div>
+    <script>
+      // create function textbold() for all p elements so that when viewers mouseover to the paragraphs, the text will become bold
+
+      function textbold(paraId) {
+        let para = document.getElementById(paraId);
+        para.style.fontWeight = "bold";
+      }
+
+      document
+        .getElementById("paraone")
+        .addEventListener("mouseover", function () {
+          textbold("paraone");
+        });
+
+      document
+        .getElementById("paratwo")
+        .addEventListener("mouseover", function () {
+          textbold("paratwo");
+        });
+
+      document
+        .getElementById("parathree")
+        .addEventListener("mouseover", function () {
+          textbold("parathree");
+        });
+
+        document
+        .getElementById("parafour")
+        .addEventListener("mouseover", function () {
+          textbold("parafour");
+        });
+
+      function textback(paraId) {
+        let para = document.getElementById(paraId);
+        para.style.fontWeight = "normal";
+      }
+
+      document
+        .getElementById("paraone")
+        .addEventListener("mouseleave", function () {
+          textback("paraone");
+        });
+
+      document
+        .getElementById("paratwo")
+        .addEventListener("mouseleave", function () {
+          textback("paratwo");
+        });
+
+      document
+        .getElementById("parathree")
+        .addEventListener("mouseleave", function () {
+          textback("parathree");
+        });
+
+        document
+        .getElementById("parafour")
+        .addEventListener("mouseleave", function () {
+          textback("parafour");
+        });
+    </script>
   </body>
 </html>
