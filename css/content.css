@@ -42,7 +42,10 @@
     margin-right: 8%;
     margin-left: 70%;
     padding: 30px;
-    float: left;
+    /* float: left; */
+    position: fixed;
+    top:50px;
+    right:50px;
   }
 
   #contents h4 {
