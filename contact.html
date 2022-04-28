@@ -201,7 +201,6 @@
             li.style.padding = "1vw";
           });
           //------same code ends here
-
         } else {
           //-------start from here, code same for all pages
           //return the font of header "Chinese Product Review" to 40px
@@ -214,15 +213,16 @@
           });
 
           //return the padding of all li elements in the navigation bar to 10px
-            lilili.forEach((li) => {
+          lilili.forEach((li) => {
             li.style.padding = "1opx";
           });
           //------same code ends here
-        }}
+        }
+      }
 
-        window.onresize = function () {
+      window.onresize = function () {
         changefontsize();
-          };
+      };
     </script>
   </body>
 </html>

@@ -86,7 +86,7 @@ img {
 
 #contents {
   text-align: right;
-  font-size: 10px;
+  font-size: 20px;
   margin-right: 8%;
   margin-left: 70%;
   padding: 30px;
@@ -96,7 +96,7 @@ img {
 }
 
 #contents h4 {
-  font-size: 20px;
+  font-size: 30px;
   font-weight: 600;
   font-family: "Times New Roman", Times, serif;
 }
@@ -106,15 +106,13 @@ img {
   color: black;
 }
 
-li {
-  font-size: 18px;
+#contents li {
   list-style: none;
   padding: 20px;
-}
-
-ul {
   border-top: 1px solid rgba(49, 44, 25, 0.767);
   border-right: 1px solid rgba(49, 44, 25, 0.767);
+  border-bottom: 1px solid rgba(49, 44, 25, 0.767);
+  text-align: right;
 }
 
 .text {
@@ -138,15 +136,14 @@ ul {
 
 .joinlist {
   margin-left: 12%;
-  margin-right: 31%;  
+  margin-right: 31%;
   text-align: center;
-
 }
 
 #button {
-  margin-left: 50%;
-  margin-right:50%;
-  font-size: large;
+  margin-left: 40.5%;
+  margin-right: 69%;
+  font-size: 25px;
   background-color: rgb(28, 53, 94);
-  color:white;
+  color: white;
 }

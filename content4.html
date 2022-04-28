@@ -23,25 +23,28 @@
       <h1 id="topheader">Chinese Product Review</h1>
       <div id="navigation">
         <ul id="nav">
-          <li><a href="index.html">Home</a></li>
-          <li><a href="content1.html">Product 1</a></li>
-          <li><a href="content2.html">Product 2</a></li>
-          <li><a href="content3.html">Product 3</a></li>
-          <li><a href="content4.html">Product 4</a></li>
-          <li><a href="content5.html">Product 5</a></li>
-          <li><a href="contact.html">Contact</a></li>
-          <li><a href="sitemap.html">Sitemap</a></li>
+          <li><a class="texta" href="index.html">Home</a></li>
+          <li><a class="texta" href="content1.html">Product 1</a></li>
+          <li><a class="texta" href="content2.html">Product 2</a></li>
+          <li><a class="texta" href="content3.html">Product 3</a></li>
+          <li><a class="texta" href="content4.html">Product 4</a></li>
+          <li><a class="texta" href="content5.html">Product 5</a></li>
+          <li><a class="texta" href="contact.html">Contact</a></li>
+          <li><a class="texta" href="sitemap.html">Sitemap</a></li>
         </ul>
       </div>
     </div>
 
     <div id="title">
-      <h2>"Jinsha" Rubik's Cube</h2>
-      <h3>Created by the "The Nation's Greatest Treasure" TV program</h3>
-      <h3>
+      <h2 id="titleh2" v>"Jinsha" Rubik's Cube</h2>
+      <h3 id="titleh3">
+        Created by the "The Nation's Greatest Treasure" TV program
+      </h3>
+      <h3 id="titleh3-2">
         <i
           >Available on
           <a
+            class="texta"
             href="https://detail.tmall.com/item.htm?spm=a1z10.5-b.w4011-21062092750.184.107b4256RMfvGD&id=642960879338&rn=fd5e91287bb3ddcbd5cb8c94ec036c52&abbucket=2"
             >Taobao</a
           ></i
@@ -50,14 +53,14 @@
     </div>
     <div id="contents">
       <!-- this part will be floating as users scroll down-->
-      <h4>Contents</h4>
+      <h4 id="contenth4">Contents</h4>
       <ul>
         <li><a href="#desc">Product Description</a></li>
         <li><a href="#elem">Traditional Elements</a></li>
       </ul>
     </div>
-    <div class="pic">
-      <img src="images/jinsha1.jpg" alt="Jinsha" title="Jinsha" />
+    <div class="pic" id="picone">
+      <img id="pic1" src="images/jinsha1.jpg" alt="Jinsha" title="Jinsha" />
     </div>
     <div class="text" id="desc">
       <h4>Product Description</h4>
@@ -69,7 +72,7 @@
       </p>
     </div>
     <div class="pic">
-      <img src="images/jinsha3.jpg" alt="Jinsha" title="Jinsha" />
+      <img id="pic2" src="images/jinsha3.jpg" alt="Jinsha" title="Jinsha" />
     </div>
     <div class="text" id="elem">
       <h4>Traditional Elements</h4>
@@ -86,13 +89,15 @@
       </p>
     </div>
     <div class="pic">
-      <img src="images/jinsha2.jpg" alt="Jinsha" title="Jinsha" />
+      <img id="pic3" src="images/jinsha2.jpg" alt="Jinsha" title="Jinsha" />
     </div>
     <div class="text">
       <p id="parathree">
         If you would like to learn more about this product and the story behind,
         you may go to the
-        <a href="https://www.dha.ac.cn/">Dunhuang Acamedy's official website</a>
+        <a class="texta" href="https://www.dha.ac.cn/"
+          >Dunhuang Acamedy's official website</a
+        >
         for more information.
       </p>
       <br />
@@ -178,10 +183,31 @@
         purchase();
       };
 
-       //create a function changefontsize() when screen width < screen height
+      //create a function purchase() to create an alert message that tells the user their number on the
+      //waiting list (number equals to the order users clicked the button), and also changed the text
+      //to show that this product sold out
+
+      function purchase() {
+        let num = parseInt(Math.random() * 1000 + 100);
+        alert(
+          "Sorry, this item is sold out already. Your number on the waiting list is " +
+            num +
+            ""
+        );
+        let textchange = document.getElementById("parafour").innerText;
+        textchange =
+          "Sorry the item is sold out already. Please check back in future to purchase the item.";
+        document.getElementById("parafour").innerText = textchange;
+        document.getElementById("parafour").style.textDecoration = "underline";
+      }
+
+      document.getElementById("button").onclick = function () {
+        purchase();
+      };
+
+      //create a function changefontsize() when screen width < screen height
       //reference: https://stackoverflow.com/questions/19371122/execute-function-based-on-screen-size
       function changefontsize() {
-        //--------start from here, code same for all pages
         console.log("#####STARTING POINT######");
         let window_width = window.innerWidth;
         console.log("current window width is " + window_width + "");
@@ -194,11 +220,20 @@
         console.log("#header h1's font size is " + topheadersize + "");
         const aaa = document.querySelectorAll("a");
         const lilili = document.querySelectorAll("li");
-        //--------same code ends here
+        let titleh2size = window.getComputedStyle(
+          document.getElementById("titleh2")
+        ).fontSize;
+        console.log("titleh2 font size is " + titleh2size + "");
+        let titleh3size = window.getComputedStyle(
+          document.getElementById("titleh3")
+        ).fontSize;
+        console.log("titleh3 font size is " + titleh3size + "");
+        const allh4 = document.querySelectorAll("h4");
+        const allp = document.querySelectorAll("p");
+        const textaaa = document.querySelectorAll(".texta");
+        const alltextdiv = document.querySelectorAll(".text");
 
         if (window_width < window_height) {
-          //-------start from here, code same for all pages
-
           //change the font of header "Chinese Product Review"
           console.log("...start to make font size responsive...");
           document.getElementById("topheader").style.fontSize = "4vw";
@@ -213,9 +248,49 @@
           lilili.forEach((li) => {
             li.style.padding = "1vw";
           });
-          //------same code ends here
+          //change font size and line height of #titleh2 and #titleh3
+          document.getElementById("titleh2").style.fontSize = "3.2vw";
+          document.getElementById("titleh3").style.fontSize = "2.2vw";
+          document.getElementById("titleh3").style.lineHeight = "1vw";
+          document.getElementById("titleh3-2").style.fontSize = "2.2vw";
+          document.getElementById("titleh3-2").style.lineHeight = "1vw";
+
+          //change font size of all h4 elements
+          allh4.forEach((h4) => {
+            h4.style.fontSize = "2.2vw";
+          });
+
+          //change font size and line height of all p elements
+          allp.forEach((p) => {
+            p.style.fontSize = "2vw";
+            p.style.lineHeight = "2.5vw";
+          });
+
+          //change font size of all a elements within the body (not the a in header)
+          textaaa.forEach((a) => {
+            a.style.fontSize = "2vw";
+          });
+
+          //change margintop and marginbottom of all text div
+          alltextdiv.forEach((text) => {
+            text.style.marginTop = "20px";
+            text.style.marginBottom = "20px";
+          });
+
+          //change font size of button
+          document.getElementById("button").style.fontSize = "2.2vw";
+
+          //change content h4 font size to 2.2vw
+          document.getElementById("contenth4").style.fontSize = "2.5vw";
+          document.getElementById("contenth4").style.textAlign = "center";
+
+          //change the css of #contents, to make it above the title and
+          document.getElementById("contents").style.top = "0";
+          document.getElementById("contents").style.right = "0";
+          document.getElementById("contents").style.position = "relative";
+          document.getElementById("contents").style.marginLeft = "12%";
+          document.getElementById("contents").style.marginRight = "31%";
         } else {
-          //-------start from here, code same for all pages
           //return the font of header "Chinese Product Review" to 40px
           document.getElementById("topheader").style.fontSize = "40px";
           console.log("#header h1's font size is " + topheadersize + "");
@@ -229,7 +304,49 @@
           lilili.forEach((li) => {
             li.style.padding = "1opx";
           });
-          //------same code ends here
+
+          //return the font size of #titleh2 and #titleh3 to 40px andd 20px
+          document.getElementById("titleh2").style.fontSize = "40px";
+          document.getElementById("titleh3").style.fontSize = "20px";
+          document.getElementById("titleh3").style.lineHeight = "10px";
+          document.getElementById("titleh3-2").style.fontSize = "20px";
+          document.getElementById("titleh3-2").style.lineHeight = "10px";
+
+          //return the font size of all h4 elements to 20px
+          allh4.forEach((h4) => {
+            h4.style.fontSize = "20px";
+          });
+
+          //return the font size and line height of all p elements to 18px
+          allp.forEach((p) => {
+            p.style.fontSize = "18px";
+            p.style.lineHeight = "30px";
+          });
+
+          //return the font size of all a elements within the body (not the a in header)
+          textaaa.forEach((a) => {
+            a.style.fontSize = "18px";
+          });
+
+          //return margin top and margin bottom for all text div
+          alltextdiv.forEach((text) => {
+            text.style.marginTop = "50px";
+            text.style.marginBottom = "50px";
+          });
+
+          //return font size of button to 25px
+          document.getElementById("button").style.fontSize = "25px";
+
+          //creturn the css of #contents, to make it above the title and
+          document.getElementById("contents").style.top = "150px";
+          document.getElementById("contents").style.right = "50px";
+          document.getElementById("contents").style.position = "fixed";
+          document.getElementById("contents").style.marginLeft = "70%";
+          document.getElementById("contents").style.marginRight = "8%";
+
+          //return the css of contenth4
+          document.getElementById("contenth4").style.fontSize = "30px";
+          document.getElementById("contenth4").style.textAlign = "right";
         }
       }
 
