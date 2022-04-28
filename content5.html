@@ -141,7 +141,7 @@
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowfullscreen
       ></iframe>
-      <p id="parafour">
+      <p id="parafive">
         <b>Description of the video: </b>
         A massive dig unearthed over 500 sophisticated artefacts in the
         Sanxingdui archaeological site in China’s southwestern province of
@@ -161,11 +161,22 @@
     </div>
     <div class="text">
       <p id="parathree">
-        If you would like to learn more about this product, "The Nation's Greatest Treasure" tv program, and Sanxingdui,
-        you may watch this
+        If you would like to learn more about this product, "The Nation's
+        Greatest Treasure" tv program, and Sanxingdui, you may watch this
         <a href="https://www.youtube.com/watch?v=qqmz9Heds2I">video</a>
         for more information.
       </p>
+      <br />
+      <p id="parafour">
+        <u
+          >If you would like to purchase the item from our website, you can
+          click the button below to check for availability.</u
+        >
+      </p>
+
+      <div id="joinlist">
+        <button id="button" type="button">Purchase</button>
+      </div>
     </div>
     <script>
       // create function textbold() for all p elements so that when viewers mouseover to the paragraphs, the text will become bold
@@ -193,7 +204,7 @@
           textbold("parathree");
         });
 
-        document
+      document
         .getElementById("parafour")
         .addEventListener("mouseover", function () {
           textbold("parafour");
@@ -222,11 +233,33 @@
           textback("parathree");
         });
 
-        document
-        .getElementById("parafour")
+      document
+        .getElementById("parafive")
         .addEventListener("mouseleave", function () {
           textback("parafour");
         });
+
+      //create a function purchase() to create an alert message that tells the user their number on the
+      //waiting list (number equals to the order users clicked the button), and also changed the text
+      //to show that this product sold out
+
+      function purchase() {
+        let num = parseInt(Math.random() * 1000 + 100);
+        alert(
+          "Sorry, this item is sold out already. Your number on the waiting list is " +
+            num +
+            ""
+        );
+        let textchange = document.getElementById("parafour").innerText;
+        textchange =
+          "Sorry the item is sold out already. Please check back in future to purchase the item.";
+        document.getElementById("parafour").innerText = textchange;
+        document.getElementById("parafour").style.textDecoration = "underline";
+      }
+
+      document.getElementById("button").onclick = function () {
+        purchase();
+      };
     </script>
   </body>
 </html>

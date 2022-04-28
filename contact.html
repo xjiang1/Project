@@ -4,10 +4,16 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="about products with creative designs and traditional Chinese
-    culture elements"/>
-    <meta name="keywords" content="Chinese Culture, Creative Products, Design"/>
-    <mate name="author" content="Xuyang Jiang from Babson College"/>
+    <meta
+      name="description"
+      content="about products with creative designs and traditional Chinese
+    culture elements"
+    />
+    <meta
+      name="keywords"
+      content="Chinese Culture, Creative Products, Design"
+    />
+    <mate name="author" content="Xuyang Jiang from Babson College" />
     <title>Document</title>
     <link rel="stylesheet" href="css/header.css" />
     <link rel="icon" href="images/favicon.ico" type="image/x-icon" />
@@ -88,17 +94,17 @@
       <div id="form" class="pagebody-child">
         <form method="" action="">
           <div>
-            <label for="firstname">First Name: </label>
+            <label for="firstname">First Name (required): </label>
             <br />
             <input type="text" id="firstname" name="firstname" maxlength="20" />
           </div>
           <div>
-            <label for="lastname">Last Name:</label>
+            <label for="lastname">Last Name (required):</label>
             <br />
             <input type="text" id="lastname" name="lastname" maxlength="20" />
           </div>
           <div>
-            <label for="email">Email:</label>
+            <label for="email">Email (required):</label>
             <br />
             <input type="text" id="email" name="email" maxlength="100" />
           </div>
@@ -112,8 +118,49 @@
               placeholder="If you have any feedback to improve the website, please enter your feedback here!"
             ></textarea>
           </div>
+          <div>
+            <input type="button" value="submit" id="submit" />
+          </div>
         </form>
       </div>
     </div>
+    <script>
+      //create a function validate () to validate the form
+      function validate() {
+        //check if any value entered in the "First Name", "Last Name", and "Email"
+        let firstvalue = document.getElementById("firstname").value;
+        console.log(firstvalue);
+        let lastvalue = document.getElementById("lastname").value;
+        console.log(lastvalue);
+        let emailvalue = document.getElementById("email").value;
+        console.log(emailvalue);
+        if (firstvalue == "" || lastvalue == "" || emailvalue == "") {
+          alert("please fill out all required information to submit");
+        }
+
+        //check if the value entered in the "First' Name" and "last Name" inputs are letters. If enter numbers, alert
+        let resultfname = /^[A-Za-z]+$/.test(firstvalue);
+        console.log(resultfname);
+        let resultlname = /^[A-Za-z]+$/.test(lastvalue);
+        console.log(resultlname);
+        if (resultfname == false || resultlname == false) {
+          alert("only letters are allowed to be entered for names");
+          document.getElementById("firstname").value = "";
+          document.getElementById("lastname").value = "";
+          emailvalue = document.getElementById("email").value = "";
+        }
+
+        //check if the email added include "@", if not alert
+        let resultemail = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/.test(emailvalue);
+        if (resultemail == false) {
+          alert("please enter the correct email address");
+          emailvalue = document.getElementById("email").value = "";
+        }
+      }
+
+      document.getElementById("submit").onclick = function () {
+        validate();
+      };
+    </script>
   </body>
 </html>

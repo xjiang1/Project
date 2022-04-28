@@ -35,8 +35,17 @@
       </div>
     </div>
 
+    <div id="contents">
+      <!-- this part will be floating as users scroll down-->
+      <h4>Contents</h4>
+      <ul>
+        <li><a href="#desc">Product Description</a></li>
+        <li><a href="#elem">Traditional Elements</a></li>
+      </ul>
+    </div>
+
     <div id="title">
-      <h2>"Fei Tian"Bookmark</h2>
+      <h2>"Fei Tian" Bookmark</h2>
       <h3>Created by the Dunhuang Academy</h3>
       <h3>
         <i
@@ -48,16 +57,9 @@
         >
       </h3>
     </div>
-    <div id="contents">
-      <!-- this part will be floating as users scroll down-->
-      <h4>Contents</h4>
-      <ul>
-        <li><a href="#desc">Product Description</a></li>
-        <li><a href="#elem">Traditional Elements</a></li>
-      </ul>
-    </div>
+
     <div class="pic" id="picone">
-      <img src="images/feitian1.png" alt="FeiTian" title="FeiTian" />
+      <img id="pic1" src="images/feitian1.png" alt="FeiTian" title="FeiTian" />
     </div>
     <div class="text" id="desc">
       <h4>Product Description</h4>
@@ -68,8 +70,9 @@
         gradient metallic color design.
       </p>
     </div>
+
     <div class="pic">
-      <img src="images/feitian2.png" alt="FeiTian" title="FeiTian" />
+      <img id="pic2" src="images/feitian2.png" alt="FeiTian" title="FeiTian" />
     </div>
     <div class="text" id="elem">
       <h4>Traditional Elements</h4>
@@ -85,8 +88,9 @@
         bookmark is a beautiful art piece.
       </p>
     </div>
+
     <div class="pic">
-      <img src="images/feitian3.png" alt="FeiTian" title="FeiTian" />
+      <img id="pic3" src="images/feitian3.png" alt="FeiTian" title="FeiTian" />
     </div>
     <div class="text">
       <p id="parathree">
@@ -95,7 +99,19 @@
         <a href="https://www.dha.ac.cn/">Dunhuang Acamedy's official website</a>
         for more information.
       </p>
+      <br />
+      <p id="parafour">
+        <u
+          >If you would like to purchase the item from our website, you can
+          click the button below to check for availability.</u
+        >
+      </p>
+
+      <div id="joinlist">
+        <button id="button" type="button">Purchase</button>
+      </div>
     </div>
+
     <script>
       // create function textbold() for all p elements so that when viewers mouseover to the paragraphs, the text will become bold
 
@@ -143,6 +159,44 @@
         .getElementById("parathree")
         .addEventListener("mouseleave", function () {
           textback("parathree");
+        });
+
+      //create a function purchase() to create an alert message that tells the user their number on the
+      //waiting list (number equals to the order users clicked the button), and also changed the text
+      //to show that this product sold out
+
+      function purchase() {
+        let num = parseInt(Math.random() * 1000 + 100);
+        alert(
+          "Sorry, this item is sold out already. Your number on the waiting list is " +
+            num +
+            ""
+        );
+        let textchange = document.getElementById("parafour").innerText;
+        textchange =
+          "Sorry the item is sold out already. Please check back in future to purchase the item.";
+        document.getElementById("parafour").innerText = textchange;
+        document.getElementById("parafour").style.textDecoration = "underline";
+      }
+
+      document.getElementById("button").onclick = function () {
+        purchase();
+      };
+
+      //create fuunction changeimg() to change image when mouseover and return back to default when mouseleave
+      function changeimg(imageId) {
+        const myimg = new Array();
+        myimg[0] = "images/feitian1.png";
+        myimg[1] = "images/feitian2.png";
+        myimg[2] = "images/feitian3.png";
+        let newimg = myimg[(Math.random()*myimg.length)];
+        document.getElementById(imageId).src = " + newimg +";
+      }
+
+      document
+        .getElementById("pic1")
+        .addEventListener("mouseover", function () {
+          changeimg();
         });
     </script>
   </body>
