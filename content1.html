@@ -183,21 +183,6 @@
         purchase();
       };
 
-      //create fuunction changeimg() to change image when mouseover and return back to default when mouseleave
-      function changeimg(imageId) {
-        const myimg = new Array();
-        myimg[0] = "images/feitian1.png";
-        myimg[1] = "images/feitian2.png";
-        myimg[2] = "images/feitian3.png";
-        let newimg = myimg[(Math.random()*myimg.length)];
-        document.getElementById(imageId).src = " + newimg +";
-      }
-
-      document
-        .getElementById("pic1")
-        .addEventListener("mouseover", function () {
-          changeimg();
-        });
     </script>
   </body>
 </html>
