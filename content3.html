@@ -53,7 +53,7 @@
   </head>
   <body>
     <div id="header">
-      <h1>Chinese Product Review</h1>
+      <h1 id="topheader">Chinese Product Review</h1>
       <div id="navigation">
         <ul id="nav">
           <li><a href="index.html">Home</a></li>
@@ -263,6 +263,65 @@
 
       document.getElementById("button").onclick = function () {
         purchase();
+      };
+
+       //create a function changefontsize() when screen width < screen height
+      //reference: https://stackoverflow.com/questions/19371122/execute-function-based-on-screen-size
+      function changefontsize() {
+        //--------start from here, code same for all pages
+        console.log("#####STARTING POINT######");
+        let window_width = window.innerWidth;
+        console.log("current window width is " + window_width + "");
+        let window_height = window.innerHeight;
+        console.log("current window height is " + window_height + "");
+        //reference: https://developer.mozilla.org/en-US/docs/Web/API/Window/getComputedStyle
+        let topheadersize = window.getComputedStyle(
+          document.getElementById("topheader")
+        ).fontSize;
+        console.log("#header h1's font size is " + topheadersize + "");
+        const aaa = document.querySelectorAll("a");
+        const lilili = document.querySelectorAll("li");
+        //--------same code ends here
+
+        if (window_width < window_height) {
+          //-------start from here, code same for all pages
+
+          //change the font of header "Chinese Product Review"
+          console.log("...start to make font size responsive...");
+          document.getElementById("topheader").style.fontSize = "4vw";
+
+          //change the font of a elements in the navigation bar
+          //reference: https://bobbyhadz.com/blog/javascript-change-style-of-all-elements-with-class
+          aaa.forEach((a) => {
+            a.style.fontSize = "3vw";
+          });
+
+          //change the padding of all li elements in the navigation bar
+          lilili.forEach((li) => {
+            li.style.padding = "1vw";
+          });
+          //------same code ends here
+        } else {
+          //-------start from here, code same for all pages
+          //return the font of header "Chinese Product Review" to 40px
+          document.getElementById("topheader").style.fontSize = "40px";
+          console.log("#header h1's font size is " + topheadersize + "");
+
+          //return the font of a elements in the navigation bar to 20px
+          aaa.forEach((a) => {
+            a.style.fontSize = "20px";
+          });
+
+          //return the padding of all li elements in the navigation bar to 10px
+          lilili.forEach((li) => {
+            li.style.padding = "1opx";
+          });
+          //------same code ends here
+        }
+      }
+
+      window.onresize = function () {
+        changefontsize();
       };
     </script>
   </body>

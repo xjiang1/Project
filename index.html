@@ -26,23 +26,23 @@
         margin: auto;
       }
 
-      .introtext {
-        position:absolute;
+      #introtext {
+        position: absolute;
         top: 60px;
         left: 80px;
         text-align: left;
-        font-size: 1.3vw;
+        font-size: 20px;
         font-family: Arial, Helvetica, sans-serif;
-        line-height: 2vw;
+        line-height: 35px;
         width: 100%;
         height: auto;
       }
 
-      .introtext h2 {
+      #introtext h2 {
         margin-right: 65%;
       }
 
-      .introtext p {
+      #introtext p {
         margin-right: 65%;
         margin-top: 50px;
       }
@@ -58,7 +58,7 @@
   </head>
   <body>
     <div id="header">
-      <h1>Chinese Product Review</h1>
+      <h1 id="topheader">Chinese Product Review</h1>
       <div id="navigation">
         <ul id="nav">
           <li><a href="index.html">Home</a></li>
@@ -80,9 +80,11 @@
         alt="background"
         title="background"
       />
-      <div class="introtext">
-        <h2>Traditional Chinese Culture X Modern Product Disign</h2>
-        <p>
+      <div id="introtext">
+        <h2 id="introh2">
+          Traditional Chinese Culture X Modern Product Disign
+        </h2>
+        <p id="introp">
           Welcome to my website! My website is about products with creative
           designs and traditional Chinese culture elements. I will demonstrate
           some of the products I like on the website and then explain the
@@ -115,6 +117,93 @@
         .addEventListener("mouseleave", function () {
           returnimg();
         });
+
+      //create a function changefontsize() when screen width < screen height
+      //reference: https://stackoverflow.com/questions/19371122/execute-function-based-on-screen-size
+      function changefontsize() {
+        //--------start from here, code same for all pages
+        console.log("#####STARTING POINT######");
+        let window_width = window.innerWidth;
+        console.log("current window width is " + window_width + "");
+        let window_height = window.innerHeight;
+        console.log("current window height is " + window_height + "");
+        //reference: https://developer.mozilla.org/en-US/docs/Web/API/Window/getComputedStyle
+        let topheadersize = window.getComputedStyle(
+          document.getElementById("topheader")
+        ).fontSize;
+        console.log("#header h1's font size is " + topheadersize + "");
+        const aaa = document.querySelectorAll("a");
+        const lilili = document.querySelectorAll("li");
+        //--------same code ends here
+        let introh2size = window.getComputedStyle(
+          document.getElementById("introh2")
+        ).fontSize;
+        console.log("introh2 font size is " + introh2size + "");
+        let intropsize = window.getComputedStyle(
+          document.getElementById("introp")
+        ).fontSize;
+        console.log("introp font size is " + intropsize + "");
+        let introtext_height = window.getComputedStyle(
+          document.getElementById("introtext")
+        ).lineHeight;
+        console.log("introtext line height is " + introtext_height + "");
+
+        if (window_width < window_height) {
+          //-------start from here, code same for all pages
+
+          //change the font of header "Chinese Product Review"
+          console.log("...start to make font size responsive...");
+          document.getElementById("topheader").style.fontSize = "4vw";
+
+          //change the font of a elements in the navigation bar
+          //reference: https://bobbyhadz.com/blog/javascript-change-style-of-all-elements-with-class
+          aaa.forEach((a) => {
+            a.style.fontSize = "3vw";
+          });
+
+          //change the padding of all li elements in the navigation bar
+          lilili.forEach((li) => {
+            li.style.padding = "1vw";
+          });
+          //------same code ends here
+
+          //change the font of introtext h2 and p
+          document.getElementById("introh2").style.fontSize = "3vw";
+          document.getElementById("introp").style.fontSize = "2.5vw";
+
+          //change the line height of #introp
+          document.getElementById("introtext").style.lineHeight = "3.5vw";
+
+        } else {
+          //-------start from here, code same for all pages
+          //return the font of header "Chinese Product Review" to 40px
+          document.getElementById("topheader").style.fontSize = "40px";
+          console.log("#header h1's font size is " + topheadersize + "");
+
+          //return the font of a elements in the navigation bar to 20px
+          aaa.forEach((a) => {
+            a.style.fontSize = "20px";
+          });         
+          
+          //return the padding of all li elements in the navigation bar to 10px
+            lilili.forEach((li) => {
+            li.style.padding = "1opx";
+          });
+          //------same code ends here
+
+          //return the font of introtext h2 and p
+          document.getElementById("introh2").style.fontSize = "25px";
+          document.getElementById("introp").style.fontSize = "20px";
+
+          //return the line height of #introp
+          document.getElementById("introtext").style.lineHeight = "35px";
+        }
+      }
+
+      window.onresize = function () {
+        changefontsize();
+      };
     </script>
   </body>
 </html>
+px
